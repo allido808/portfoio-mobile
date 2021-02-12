@@ -88,14 +88,7 @@ a {
 }
 
 /* end Vertical Navigation Bar */
-#toggle{
-    display: none;
-}
-@media(max-width:1024px){
-    #toggle{
-        display: block;
-    }
-}
+
 
 
 /* Start hero header */
@@ -268,7 +261,7 @@ h1 {
 @media (max-width:1024px){
 .nav-gauche{
 
-    display: none;
+    left: -300px;
 
 }
 .hero-header {
@@ -472,7 +465,7 @@ hr{
 @media (max-width:1207px){
     .nav-gauche{
     
-        display: none;
+        left:-300px;
     
     }
 
@@ -545,14 +538,29 @@ margin: 0 auto;
 }
 }
 .waw{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     /* display: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 35px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
 
 }
+
+.waw:hover{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+}
+
 .project-divs{
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    height: 200px;
     background-image: url(/ressources/bootstrap.jpg) ;
     background-size: cover;
 }
@@ -843,3 +851,45 @@ a {
     text-decoration: none;
 }
 
+@media(max-width:475px){
+    .cont-portfolio{
+        grid-template-areas: "item1"
+                             "item2"
+                             "item3"
+                             "item4";
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr;
+    margin: 0 auto;
+}
+}
+
+#tog{
+    /* position: absolute; */
+    color: white;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    position: fixed;
+    display: none;
+}
+
+.show{
+left: 0;
+}
+.hide{
+left:-300px ;
+}
+
+@media(max-width:1207px){
+ #tog{
+     display: block;
+ }
+}
+
+.btn-projets {
+    color: var(--color-white);
+    background: var(--color-main);
+    padding: 10px;
+    border-radius: 2px;
+    width: 85px;
+}
